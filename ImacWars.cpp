@@ -17,8 +17,9 @@ int main()
 {
     remplirGrille(grille);
     cout << endl; // test pour savoir si la grille se remplit
+
+    grille[35] = "  X  |"; // enlever un espace et le remplacer par un caractère fonctionne bien !
     afficheGrille(grille);
-    
 }
 
 void remplirGrille(string* grille) {
@@ -33,7 +34,7 @@ void remplirGrille(string* grille) {
         grille[indTab] = "  " + to_string(indiceLigne) + " |";
         indTab++;
         indiceLigne++;
-        for (int j = 0; j <= tailleLigne+1; j++) { // On répète pour la taille de la ligne 
+        for (int j = 0; j <= tailleLigne+1; j++) { // On répète pour la taille de la ligne
             grille[indTab] = "     |";
             indTab++;
         }
@@ -47,7 +48,7 @@ void afficheGrille(string* grille) {
     for (int i = 0; i <= tailleLigne; i++) {
         cout << grille[i];
     }
-    for (int i = tailleLigne; i < (tailleLigne + 3) * (tailleLigne + 2); i++) { 
+    for (int i = tailleLigne; i < (tailleLigne + 3) * (tailleLigne + 2); i++) {
         if (compteur == tailleLigne) {
             cout << endl;
             compteur = -2;                                                           // tailleligne = 9 or il y a 11 éléments par ligne, on initialise a -2
@@ -74,7 +75,7 @@ void afficheGrille(string* grille) {
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
 // Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
 
-// Astuces pour bien démarrer : 
+// Astuces pour bien démarrer :
 //   1. Utilisez la fenêtre Explorateur de solutions pour ajouter des fichiers et les gérer.
 //   2. Utilisez la fenêtre Team Explorer pour vous connecter au contrôle de code source.
 //   3. Utilisez la fenêtre Sortie pour voir la sortie de la génération et d'autres messages.
